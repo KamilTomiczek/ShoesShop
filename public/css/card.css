@@ -1,0 +1,121 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 80px 10px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: #fff;
+    box-shadow: -5px 10px 18px #888888;
+    overflow: hidden;
+}
+
+.card:hover{
+    box-shadow: -5px 10px 50px #888888;
+}
+
+.card .img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 10px;
+}
+
+.card .img .big{
+    width: 400px;    
+}
+
+.card .img .simg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 10px;
+}
+
+.card .img .simg i{
+    font-size: 24px;
+    padding: 10px;
+}
+
+.card .img .simg .cont{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.card .img .simg .cont .sml{
+    width: 70px;
+    cursor: pointer;
+}
+
+.card .img .simg .cont .sml:hover{
+    width: 77px;
+}
+
+.card .detalist{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.card .detalist h1{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.card .detalist h3{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+@media(max-width:991px){
+    .card .img .big{
+        width: 350px;
+    }
+
+    .card .img .simg .cont{
+        width: 65px;
+        height: 65px;
+    }
+
+    .card .img .simg .cont .sml{
+        width: 65px;
+    }
+}
+
+@media(max-width:768px){
+    .card .img .big{
+        width: 300px;
+    }
+
+    .card .img .simg .cont{
+        width: 55px;
+        height: 55px;
+    }
+
+    .card .img .simg .cont .sml{
+        width: 55px;
+    }
+}
+
+@media(max-width:350px){
+    .card .img .big{
+        width: 220px;
+    }
+
+    .card .img .simg .cont{
+        width: 45px;
+        height: 45px;
+    }
+
+    .card .img .simg .cont .sml{
+        width: 45px;
+    }
+}
