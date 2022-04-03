@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\categoryController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,56 +28,11 @@ Route::get('/', function () {
                           ->with(['category' => $category]);
 });
 
-Route::get('/mens', function () {
+Route::get('/admin', function(){
 
-    $shoes = DB::select('SELECT *
-                        FROM shoes
-                        WHERE shoes.ID = (
-                            SELECT category.ID
-                            FROM category
-                            WHERE category.name = "Męskie"
-                        )');
-    
-    $colors = DB::select('select * from colors');
     $category = DB::select('select * from category');
 
-    return view('welcome')->with(['shoes' => $shoes])
-                          ->with(['colors' => $colors])
-                          ->with(['category' => $category]);
+    return view('admin')->with(['category' => $category]);
 });
 
-Route::get('/women', function () {
-
-    $shoes = DB::select('SELECT *
-                        FROM shoes
-                        WHERE shoes.ID = (
-                            SELECT category.ID
-                            FROM category
-                            WHERE category.name = "Damskie"
-                        )');
-    
-    $colors = DB::select('select * from colors');
-    $category = DB::select('select * from category');
-
-    return view('welcome')->with(['shoes' => $shoes])
-                          ->with(['colors' => $colors])
-                          ->with(['category' => $category]);
-});
-
-Route::get('/kids', function () {
-
-    $shoes = DB::select('SELECT *
-                        FROM shoes
-                        WHERE shoes.ID = (
-                            SELECT category.ID
-                            FROM category
-                            WHERE category.name = "Dziecięce"
-                        )');
-    
-    $colors = DB::select('select * from colors');
-    $category = DB::select('select * from category');
-
-    return view('welcome')->with(['shoes' => $shoes])
-                          ->with(['colors' => $colors])
-                          ->with(['category' => $category]);
-});
+Route::get('/{category}', [categoryController::class, 'category']);

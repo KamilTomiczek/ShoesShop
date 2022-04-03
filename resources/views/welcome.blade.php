@@ -21,9 +21,9 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="/mens">Mężczyźni</a><span></span></li>
-                <li><a href="/women">Kobiety</a><span></span></li>
-                <li><a href="/kids">Dzieci</a><span></span></li>
+                <li><a href="/Męskie">Mężczyźni</a><span></span></li>
+                <li><a href="/Damskie">Kobiety</a><span></span></li>
+                <li><a href="/Dziecięce">Dzieci</a><span></span></li>
             </ul>
         </div>
         <div class="icons">
@@ -34,9 +34,9 @@
     </div>
     <div class="drop-down">
         <ul>               
-            <li><a href="/mens">Mężczyźni</a><span></span></li>
-            <li><a href="/women">Kobiety</a><span></span></li>
-            <li><a href="/kids">Dzieci</a></li>               
+            <li><a href="/Męskie">Mężczyźni</a><span></span></li>
+            <li><a href="/Damskie">Kobiety</a><span></span></li>
+            <li><a href="/Dziecięce">Dzieci</a></li>               
         </ul>
     </div>
 
