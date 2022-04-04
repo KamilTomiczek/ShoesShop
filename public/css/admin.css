@@ -51,6 +51,32 @@ form #file{
     margin-top: 10px;
 }
 
+form .fileHandler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form .fileHandler button{
+    background: none;
+    color: red;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+form .fileHandler button i{
+    font-size: 18px;
+}
+
+form .fileHandler i{
+    float: left;
+}
+
 form .btns{
     margin-top: 30px;
 }

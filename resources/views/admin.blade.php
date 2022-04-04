@@ -26,19 +26,21 @@
     </div>
 
     <div class="form">
-        <form action="">
+        <form action="/add" method="POST" enctype="multipart/form-data">
+            <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+
             <div class="name">
                 <label for="name">Nazwa produktu:</label>
-                <input id="name" type="text"><br>
+                <input name="name" id="name" type="text"><br>
             </div>
             <div class="radiobtns">
             @foreach ($category as $row=>$data)
-                <input class="rbtn" type="radio" id="{{ $data->name }}" name="category">
-                <label for="{{ $data->name }}">{{ $data->name }}</label><br>              
+                <input class="rbtn" type="radio" id="{{ $data->name }}" value="{{ $data->ID }}" name="category">
+                <label for="{{ $data->name }}">{{ $data->name }}</label><br>           
             @endforeach
             </div>
             <div class="files">
-                <input type="file" id="file" name="file" value="c:/pliki/password.txt">
+                <input type="file" id="file" name="file">
             </div>
 
             <div class="btns">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\categoryController;
 use Illuminate\Support\Facades\DB;
@@ -34,5 +35,7 @@ Route::get('/admin', function(){
 
     return view('admin')->with(['category' => $category]);
 });
+
+Route::post('/add',[AddController::class, 'create']);
 
 Route::get('/{category}', [categoryController::class, 'category']);

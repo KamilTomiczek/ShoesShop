@@ -12,7 +12,7 @@ class categoryController extends Controller
 
         $shoes = DB::select('SELECT *
                         FROM shoes
-                        WHERE shoes.ID = (
+                        WHERE shoes.category_id = (
                             SELECT category.ID
                             FROM category
                             WHERE category.name = ?
@@ -22,7 +22,7 @@ class categoryController extends Controller
         $category = DB::select('select * from category');
 
         return view('welcome')->with(['shoes' => $shoes])
-                          ->with(['colors' => $colors])
-                          ->with(['category' => $category]);
+                            ->with(['colors' => $colors])
+                            ->with(['category' => $category]);
     }
 }
