@@ -34,10 +34,11 @@
                 <input name="name" id="name" type="text"><br>
             </div>
             <div class="radiobtns">
-            @foreach ($category as $row=>$data)
-                <input class="rbtn" type="radio" id="{{ $data->name }}" value="{{ $data->ID }}" name="category">
-                <label for="{{ $data->name }}">{{ $data->name }}</label><br>           
-            @endforeach
+            <select name="category" id="category">
+                @foreach ($category as $row=>$data)
+                    <option value="{{ $data->ID }}">{{ $data->name }}</option>
+                @endforeach
+            </select>
             </div>
             <div class="files">
                 <input type="file" id="file" name="file">

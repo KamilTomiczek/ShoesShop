@@ -8,7 +8,8 @@ use \Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Exception;
-use DB;
+use Illuminate\Support\Facades\DB;
+
 
 class AddController extends Controller
 {
@@ -28,10 +29,12 @@ class AddController extends Controller
 
         $id = DB::select('select ID from shoes order by ID desc limit 1');
 
-        foreach($request->file('color') as $color){
-            $file = file_get_contents($color->getRealPath());
-            $data=array('image'=>$file, 'shoe_id'=>$id[0]->ID);
-            DB::table('colors')->insert($data);
+        if($request->file('color') != null){
+            foreach($request->file('color') as $color){
+                $file = file_get_contents($color->getRealPath());
+                $data=array('image'=>$file, 'shoe_id'=>$id[0]->ID);
+                DB::table('colors')->insert($data);
+            }
         }
 
         return redirect('/');
